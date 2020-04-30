@@ -12,10 +12,10 @@ export class Todo extends Component {
     return (
       <div className="todoCard">
         <h2 className="todoCardTitle">{name}</h2>
-        <Link to='/'>
+        <Link to='/todos'>
           <button
             className="deleteTodoBtn"
-            onClick={() => context.deleteItem(id)}>
+            onClick={() => context.deleteTodo(id)}>
             Delete
           </button>
         </Link>

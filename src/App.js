@@ -20,24 +20,13 @@ export class App extends Component {
           name: 'work'
         }
       ],
-      todos: [
-        {
-          id: cuid(),
-          name: 'email potential clients',
-          category: 'work'
-        },
-        {
-          id: cuid(),
-          name: 'take dog on hike',
-          category: 'personal'
-        }
-      ], 
+      todos: [], 
       error: null
     }
   }
 
   componentDidMount() {
-    fetch('http://localhost:8000/todos')
+    fetch('http://localhost:8000/api/todos')
       .then(response => response.json())
       .then(data => {
         this.setState({
@@ -52,7 +41,7 @@ export class App extends Component {
   }
 
   handleAddTodo = (todo) => {
-    return fetch('http://localhost:8000/todos', 
+    return fetch('http://localhost:8000/api/todos', 
       {
         method: 'POST', 
         headers: {

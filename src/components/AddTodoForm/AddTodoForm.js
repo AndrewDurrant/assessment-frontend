@@ -88,9 +88,10 @@ export class AddTodo extends Component {
             id="categoryId"
             value={this.state.value}
             onChange={e => this.handleChange(e.target.value)}
+            required
             >
               {this.context.categories.map(category => 
-                <option value={category.id} key={category.id}>{category.name}</option>
+                <option value={category.name} key={category.id}>{category.name}</option>
               )}
             </select>
         </div>
