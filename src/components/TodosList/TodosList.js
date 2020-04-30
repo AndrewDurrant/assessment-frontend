@@ -9,7 +9,6 @@ export class TodosList extends Component {
   render() {
     let context = this.context;
     let filteredTodos;
-    console.log(this.props.match.params);
     
     if (this.props.match.params.category) {
       filteredTodos = context.todos.filter(todo => todo.category === this.props.match.params.category)
