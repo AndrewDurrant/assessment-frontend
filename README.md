@@ -1,10 +1,10 @@
 Frontend
 
-1. Add the react-router-dom library and wrap your App component in BrowserRouter
+1. Add the react-router-dom library and wrap your App component in BrowserRouter **DONE**
 
-2. When the App component mounts, it should fetch Todos from your backend API and populate the App state
+2. When the App component mounts, it should fetch Todos from your backend API and populate the App state **DONE**
 
-3. Create an addTodo function in the App component that receives a todo object and adds it to state.todos
+3. Create an addTodo function in the App component that receives a todo object and adds it to state.todos **DONE**
 
 4. Create a Route component on /todos/:category path for the Todos List view
   a. This Route should render the component TodosList
