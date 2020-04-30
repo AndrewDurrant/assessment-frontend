@@ -4,6 +4,8 @@ import cuid from 'cuid';
 
 import TodoContext from './TodoContext';
 import TodosList from './components/TodosList/TodosList';
+import AddTodoForm from './components/AddTodoForm/AddTodoForm';
+
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -22,12 +24,12 @@ export class App extends Component {
         {
           id: cuid(),
           name: 'email potential clients',
-          categoryId: 'work'
+          category: 'work'
         },
         {
           id: cuid(),
           name: 'take dog on hike',
-          categoryId: 'personal'
+          category: 'personal'
         }
       ], 
       error: null
@@ -101,10 +103,35 @@ export class App extends Component {
     return (
       <TodoContext.Provider value={contextValue}>
         <>
-
-
-          <main className="App">
-        
+          <header>
+            <h1 className="appName">What Todo...</h1>
+          </header>
+          <main className="main-container">
+            <Route
+              exact
+              path="/todos"
+              render={props => (
+                <>
+                  <TodosList {...props} /> 
+                </>
+              )}
+            />
+            <Route
+              exact
+              path="/todos/:category"
+              render={props => (
+                <>
+                  <TodosList {...props} /> 
+                </>
+              )}
+            />
+            <Route
+              exact
+              path="/todos/new"
+              render={props => (
+                <AddTodoForm {...props} />
+              )}
+            />
           </main>
         </>
       </TodoContext.Provider>

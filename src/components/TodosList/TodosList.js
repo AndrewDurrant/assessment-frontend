@@ -9,9 +9,10 @@ export class TodosList extends Component {
   render() {
     let context = this.context;
     let filteredTodos;
-
-    if (this.props.match.params.categoryId) {
-      filteredTodos = context.todos.filter(todo => todo.categoryId === this.props.match.params.categoryId)
+    console.log(this.props.match.params);
+    
+    if (this.props.match.params.category) {
+      filteredTodos = context.todos.filter(todo => todo.category === this.props.match.params.category)
     } else {
       filteredTodos = context.todos;
     }
@@ -32,7 +33,7 @@ export class TodosList extends Component {
       <main className="todos">
         <div className="todoCardContainer">
           { allTodos }
-          <Link to='/addTodo'>
+          <Link to='/todos/new'>
             <button className="addTodoBtn">
               Add Todo
             </button>

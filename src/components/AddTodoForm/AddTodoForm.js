@@ -44,13 +44,13 @@ export class AddTodo extends Component {
     const { todoName, categoryId } = this.state;
     const todo = {
       id: cuid(),
-      categoryId: categoryId.value,
+      category: categoryId.value,
       name: todoName.value,
     }
     this.context.addTodo(todo)
       .then(() => {
         this.context.updateTodos(todo)
-        this.props.history.push('/')
+        this.props.history.push('/todos')
       })
   }
 
@@ -96,7 +96,7 @@ export class AddTodo extends Component {
         </div>
         
         <div>
-          <Link to='/'>
+          <Link to='/todos'>
             <button type="reset">
               Cancel
             </button>
@@ -116,4 +116,4 @@ export class AddTodo extends Component {
   }
 }
 
-export default AddItem
+export default AddTodo;

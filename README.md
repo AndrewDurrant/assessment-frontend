@@ -8,15 +8,16 @@ Frontend
 
 4. Create a Route component on /todos/:category path for the Todos List view
   a. This Route should render the component TodosList
-  b. Use the render prop and pass in this.state.todos as a prop on TodosList
+  b. Use the render prop and pass in this.state.todos as a prop on TodosList **DONE**
 
 5. Create a Route component on /todos/new path for the New Todo view
   a. This Route should render the component AddTodoForm
   b. Use the render prop to pass in the addTodo function as an onSuccess prop 
+  **DONE**
 
 6. Create TodosList and TodosItem components with the appropriate markup and utilize them
   a. The TodosList component should filter this.props.todos using the param from this.props.match.params.category 
-
+  **DONE**
 7. Create AddTodoForm and make a form to add a todo. 
   a. Submitting the form should send a POST request to your server API
   b. On success, invoke the props.onSuccess function, passing in the new todo from the API response
